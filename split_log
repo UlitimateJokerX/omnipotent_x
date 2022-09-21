@@ -1,0 +1,252 @@
+>
+                                        安養KGC                                    </a>
+                                                            </h3>
+                                                    </div>
+                    </td>
+                
+                <td class="td-universal-bet01">
+                    <div >
+                                                    <span class="aid8-teaminfo">安陽KGC</span><br>
+                                                                        <strong class="team-side DATA_MID_CLASS">客</strong>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                     <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    34%                            <div class="predictor_count_hide">22 人預測</div>
+                                                                            </td>
+                <td class="td-universal-bet02">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">大</strong><span class="data-wrap"><strong>166贏</strong><span>50%</span></span>                                            </div>
+                                </td>
+                <td class="predict-s-line ">
+                                                                                                                43%                            <div class="predictor_count_hide">6 人預測</div>
+                                                                            </td>
+
+                <td class="td-bank-bet01">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">客</strong><span class="data-wrap"><strong>+5.5</strong><span>, 1.75</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    27%                            <div class="predictor_count_hide">14 人預測</div>
+                                                                            </td>
+
+                <td class="td-bank-bet03">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">客</strong><span class="data-wrap"><strong></strong><span>2.6</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    8%                            <div class="predictor_count_hide">1 人預測</div>
+                                                                            </td>
+
+                <td class="td-bank-bet02">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">大</strong><span class="data-wrap"><strong>167.5</strong><span>, 1.75</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    36%                            <div class="predictor_count_hide">4 人預測</div>
+                                                                            </td>
+
+            </tr>
+            <tr class=" game-unset" gameid="20220421921001">
+                                    <td class="td-teaminfo">
+                        <div>
+                            <h3>
+                                                                    <a href="/games_data.php?action=team&teamid=122#historyGame" 
+false
+>
+                                        釜山KT音速彈                                    </a>
+                                                            </h3>
+                                                    </div>
+                    </td>
+                
+                <td class="td-universal-bet01">
+                    <div >
+                                                    <span class="aid8-teaminfo">水原KT爆音</span><br>
+                                                                        <strong class="team-side DATA_MID_CLASS">主</strong><span class="data-wrap"><strong>6分輸</strong><span>50%</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    <b>66%</b>                            <div class="predictor_count_hide">42 人預測</div>
+                                                                            </td>
+
+                <td class="td-universal-bet02">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">小</strong><strong></strong><span></span>                                            </div>
+                                </td>
+                <td class="predict-s-line ">
+                                                                                                <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                            <b>57%</b>                                <div class="predictor_count_hide">8 人預測</div>
+                                                                                    </td>
+
+                <td class="td-bank-bet01">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">主</strong><span class="data-wrap"><strong>-5.5</strong><span>, 1.75</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    <b>73%</b>                            <div class="predictor_count_hide">37 人預測</div>
+                                                                            </td>
+
+                <td class="td-bank-bet03">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">主</strong><span class="data-wrap"><strong></strong><span>1.3</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    <b>92%</b>                            <div class="predictor_count_hide">12 人預測</div>
+                                                                            </td>
+
+                <td class="td-bank-bet02">
+                    <div >
+                                                <strong class="team-side DATA_MID_CLASS">小</strong><span class="data-wrap"><strong>167.5</strong><span>, 1.75</span></span>                                            </div>
+                                </td>
+                <td class="predict-s ">
+                                                                                    <!-- ==================== #8198 手機版預測比例 ==================== -->
+                                                    <b>64%</b>                            <div class="predictor_count_hide">7 人預測</div>
+                                                                            </td>
+
+            </tr>
+            <tr class="gaprow">
+                <td colspan="12" scope="row">&nbsp;</td>
+            </tr>
+                    
+        </tbody>
+</table>
+                                                    </div>
+                                            <div id="tab2" class="tab_content">
+                                                    </div>
+                                            <div id="tab3" class="tab_content">
+                                                    </div>
+                                    </div>
+        </div>
+        <div id="jsonData" style="display: none">{"isAllGameStarted":false}</div>
+    </div>
+
+<script>
+$(function(){
+    $('.predict-s,.predict-s-line').mouseover(function(){
+        $(this).addClass('predictor_notify');
+        $(this).children("div[id!='hint-box']").removeClass('predictor_count_hide').addClass('predictor_count_show');
+    }).mouseout(function(){
+        $(this).removeClass('predictor_notify');
+        $(this).children("div[id!='hint-box']").removeClass('predictor_count_show').addClass('predictor_count_hide');
+    });
+});
+</script>
+
+
+<link rel=stylesheet href="/build/css/predictgame/green_hint-f603a47f17.css?v=20210809">
+<script src="includes/js/jquery_cookie.js"></script>
+<script>
+$(function(){
+    var $firstGreen = $('table.predictgame-table tr td.predict-s-win').eq(0); //找到第一個出現綠色文字的地方
+    if ($firstGreen.length == 1) {
+        var greenHintContent =
+        '<div id="hint-box"><div><a class="closebox">close</a><strong>綠色欄位</strong>表示過盤<span></span></div></div>';
+        $(greenHintContent).appendTo($firstGreen);
+        $firstGreen.css("position", "relative");
+        $firstGreen.children().css("text-align", "center");
+        $(function(){
+            $('table.predictgame-table div#hint-box').click(function(){
+                $.get('predictgame.php?action=closeGreenHint');
+                $(this).hide();
+                $.cookie("stop_green_hint_scale", true, {expires: 365})
+            });
+        });
+
+        //出現過警示，cookie值+1
+        var greenCookieCount = $.cookie("green_hint_scale");
+        greenCookieCount = (greenCookieCount == null) ? 1 : parseInt(greenCookieCount) + 1;
+        $.cookie("green_hint_scale", greenCookieCount, {expires: 365})
+    }
+});
+</script>
+
+<script src="includes/js/predictgame_result_tr_mouseover.js?v=312aa8e"></script>
+<script>
+$(function(argument) {
+    $('.universal_rules_box').colorbox({
+        width: 750,
+        height: 500,
+        onComplete: function() {
+            $('.colorboxClose').click(function(event) {
+                $.colorbox.close()
+            });
+        }
+    });
+})
+</script>
+                                                                </div>
+                                    </div>
+            </div>
+                        <div class="footerbox-whole">
+                <div class="footerbox">
+
+
+                    <!-- ==================== #8380 加大手機版footer ==================== -->
+
+                                        <!-- 電腦版 -->
+                    <ul class="footerhint">
+                        <div class="service_time">09:30~24:00</div><!--新增時間-->
+                                                <li><strong class="service_phone">客服電話</strong><span>07-9700123</span></li><!--新增時間-->
+                        <li><a href="/contact.php?back=L3ByZWRpY3RnYW1lLnBocD9hY3Rpb249c2NhbGUmYWxsaWFuY2VpZD05MiZnYW1ldGltZT0yMDIyMDQyMSZzaWQ9MQ">聯絡我們</a></li>
+                        <li><a href="/qa.php">常見問題</a></li>
+                        <li><a href="/utos.php">服務條款</a></li>
+                    </ul>
+                    <div class="footernav">
+                        <ul>
+                            <li><a href="/aboutus.php">關於我們</a></li>
+                        </ul>
+                    </div>
+                    
+
+                    
+                    <!-- ==================== #8380 加大手機版footer ==================== -->
+
+
+                    <p class="copyrights">&copy; 2022 玩運彩 <span>法律顧問：漢英得力法律事務所 陳鎮宏律師</span>
+                                        </p>
+                    <!-- ========== reCAPTCHA服務的宣告說明 ========== -->
+                    <p class="recaptcha">
+                        This site is protected by reCAPTCHA and the Google <a class="recaptcha__link" href="https://policies.google.com/privacy">Privacy Policy</a> and <a class="recaptcha__link" href="https://policies.google.com/terms">Terms of Service</a> apply.
+                    </p>
+                    <!-- ========== reCAPTCHA服務的宣告說明 ========== -->
+                </div>
+            </div>
+                    </div>
+                		<script type="text/javascript">
+		if ( top.location !== self.location ) {
+			top.location=self.location;
+		}
+        $(function() {
+            $('#navi .carditem').on('click', function () {
+                // 紀錄使用者有補卷通知時點擊購牌清單的動作
+                if ($("#js-coupon-issued").length > 0) {
+                    $.post('/user_actions.php?action=setEvent', {name: 'ShoppingListDropdownMenuBTN'});
+                }
+            });
+            $('.js-promotion_event').on('click', function () {
+                // 版標特別要加events或ga
+                if ($(this).data('events') != '') {
+                    PLS.sentEvent($(this).data('events'));
+                }
+                if ($(this).data('categroy') != '' && $(this).data('lable') != '') {
+                    PLS.sentGaEvent($(this).data('categroy'), 'click', $(this).data('lable'));
+                }
+            });
+        })
+		</script>
+                                        <script src="/includes/js/predict_scale_advance.js"></script>
+                                                    <script>
+                    </script>
+                            <script>
+                ga('send', 'pageview');
+            </script>
+                    </body>
+</html>
+
+false
+安養KGC @ 釜山KT音速彈
+2 28 0 0 26 24

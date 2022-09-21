@@ -1,0 +1,115 @@
+#!/usr/bin/env node
+
+const moment = require('moment')
+const arg = process.argv[2]
+let endDate = process.argv[3]
+const hourTypeOne = 8
+const hourTypeTwo = 4.5
+const hourTypeThree = 3.5
+let sum = 0
+
+if (arg === '--help' || arg === '-h') {
+  console.log('Usage: special-vacation-distribution LAST_HOURS');
+  console.log('Usage: special-vacation-distribution LAST_HOURS END_DATE');
+  console.log('Example: special-vacation-distribution 50.5 2020-07-05');
+  console.log('計算剩餘特休時數的分配方式');
+
+  process.exit()
+}
+
+const lastHours = arg
+
+if (!lastHours) {
+  console.log('請輸入剩餘特休時數')
+  process.exit()
+}
+
+return execute()
+
+async function execute () {
+  const typeOneMax = parseInt(lastHours / hourTypeOne)
+
+  console.log('       8: 一整天 / 4.5: 下半天 / 3.5: 上半天\n')
+  console.log(`       您的時數：${lastHours}`)
+  console.log(`       重置日期：${endDate}`)
+
+  let now = moment()
+  endDate = moment(endDate)
+  const durationDays = endDate.diff(now, 'days')
+
+  console.log(`       總天數：${durationDays} 天`)
+
+  let workDays = 0
+  const holidays = ['2020-05-01', '2020-06-25', '2020-06-26']
+
+  for (let d = 1; d <= durationDays; d++ ) {
+    now = moment()
+    now.add(d, 'days')
+
+    if (now.weekday() == 6 || now.weekday() == 0) {
+      continue
+    }
+
+    if (holidays.includes(now.format('YYYY-MM-DD'))) {
+      continue
+    }
+
+    workDays = workDays + 1
+  }
+
+  console.log(`       工作日：${workDays} 天\n`)
+
+  // 8小開頭
+  for (let i = typeOneMax; i >= 0; --i) {
+    let oneLast = lastHours - (hourTypeOne * i)
+    let oneMsg = i === 0 ? '' : `${hourTypeOne}*${i}`
+
+    // 4.5小
+    if (oneLast >= hourTypeTwo) {
+      let typeTwoMax = parseInt(oneLast / hourTypeTwo)
+
+      for (let j = typeTwoMax; j >= 0; --j) {
+        let twoLast = oneLast - (hourTypeTwo * j)
+        let twoMsg = j === 0 ? '' : `+${hourTypeTwo}*${j}`
+
+        if (i === 0) {
+          twoMsg = j === 0 ? '' : `${hourTypeTwo}*${j}`
+
+          if (twoLast < hourTypeThree) {
+            const twoRecommandString = twoLast < 1 ? '(推薦!)' : '       '
+
+            console.log(`${twoRecommandString}${twoMsg}${twoLast > 0 ? `, 剩餘：${twoLast}` : ''}, 可挑 ${j} 天放假`)
+          }
+        }
+
+        // 3.5小
+        if (twoLast >= hourTypeThree) {
+          let typeThreeMax = parseInt(twoLast / hourTypeThree)
+
+          for (let k = typeThreeMax; k >= 0; --k) {
+            let threeLast = twoLast - (hourTypeThree * k)
+            let threeMsg = k === 0 ? '' : `+${hourTypeThree}*${k}`
+
+            if (i == 0 && j == 0) {
+              threeMsg = k === 0 ? '' : `${hourTypeThree}*${k}`
+            }
+
+            if (threeLast >= hourTypeThree) {
+              continue
+            }
+
+            const threeRecommandString = threeLast < 1 ? '(推薦!)' : '       '
+
+            console.log(`${threeRecommandString}${oneMsg}${twoMsg}${threeMsg}, 剩餘：${threeLast}, 可挑 ${i + j + k} 天放假`)
+          }
+        }
+      }
+    }
+
+    if (oneLast < hourTypeThree) {
+      const oneRecommandString = oneLast < 1 ? '(推薦!)' : '       '
+
+      console.log(`${oneRecommandString}${oneMsg}${oneLast > 0 ? `, 剩餘：${oneLast}` : ''}, 可挑 ${i} 天放假`)
+    }
+  }
+}

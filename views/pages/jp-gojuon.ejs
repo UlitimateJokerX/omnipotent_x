@@ -1,0 +1,120 @@
+<link href='/css/jp-gojuon.css' rel='stylesheet' type='text/css'>
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body class='container'>
+  <div id='main' />
+  <script src="https://unpkg.com/japanese-kana@0.1.2/dist/japanese-kana.min.js"></script>
+  <script type='text/babel'>
+    const headWords = ['a', 'ka', 'ta', 'sa', 'na', 'ha', 'ma', 'ya', 'ra', 'wa']
+    const nextEmptyWords = ['ya', 'yu', 'wa', 'wo']
+    const specialWords = ['shi', 'chi', 'tsu', 'fu']
+
+    class Gojuon extends React.Component {
+      render () {
+        return (
+          <div className='row'>
+            <div className='col-md-12'>
+              <h1 className='text-center'>五十音表</h1>
+            </div>
+            <div className='col-md-2' />
+            <div className='col-md-8 table-responsive'>
+              <table className='table table-striped table-hover'>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th className='text-center'>a</th>
+                    <th className='text-center'>i</th>
+                    <th className='text-center'>u</th>
+                    <th className='text-center'>e</th>
+                    <th className='text-center'>o</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {
+                  headWords.map((head, i) => {
+                    return (
+                      <tr key={i}>
+                        <td className='text-center'>
+                        {
+                          head === 'a' ? '\\' : head.split('a')[0]
+                        }
+                        </td>
+                        {
+                          japaneseKana.line(head).map((word, j) => {
+                            const eng = japaneseKana.getRomajiByKana(word[1])
+
+                            if (nextEmptyWords.includes(eng)) {
+                              return ([
+                                <td key={j} className='text-center'>
+                                  <span className={specialWords.includes(eng) ? 'special-roma' : ''}>{eng}</span>
+                                  <br />
+                                  <span>{word[0]}</span>
+                                  <span className='katakana'>{word[1]}</span>
+                                </td>,
+                                <td key={`${j}_1`}></td>
+                              ])
+                            }
+
+                            // 因套件缺了ru, re, ro, 手動補上
+                            if (eng === 'ri') {
+                              return ([
+                                <td key={j} className='text-center'>
+                                  <span className={specialWords.includes(eng) ? 'special-roma' : ''}>{eng}</span>
+                                  <br />
+                                  <span>{word[0]}</span>
+                                  <span className='katakana'>{word[1]}</span>
+                                </td>,
+                                <td key={`${j}_11`} className='text-center'>
+                                  <span className={specialWords.includes(eng) ? 'special-roma' : ''}>ru</span>
+                                  <br />
+                                  <span>{japaneseKana.getKanaByRomaji('ru')[0]}</span>
+                                  <span className='katakana'>{japaneseKana.getKanaByRomaji('ru')[1]}</span>
+                                </td>,
+                                <td key={`${j}_12`} className='text-center'>
+                                  <span className={specialWords.includes(eng) ? 'special-roma' : ''}>re</span>
+                                  <br />
+                                  <span>{japaneseKana.getKanaByRomaji('re')[0]}</span>
+                                  <span className='katakana'>{japaneseKana.getKanaByRomaji('re')[1]}</span>
+                                </td>,
+                                <td key={`${j}_13`} className='text-center'>
+                                  <span className={specialWords.includes(eng) ? 'special-roma' : ''}>ro</span>
+                                  <br />
+                                  <span>{japaneseKana.getKanaByRomaji('ro')[0]}</span>
+                                  <span className='katakana'>{japaneseKana.getKanaByRomaji('ro')[1]}</span>
+                                </td>
+                              ])
+                            }
+
+                            return (
+                              <td key={j} className='text-center'>
+                                <span className={specialWords.includes(eng) ? 'special-roma' : ''}>{eng}</span>
+                                <br />
+                                <span>{word[0]}</span>
+                                <span className='katakana'>{word[1]}</span>
+                              </td>
+                            )
+                          })
+                        }
+                      </tr>
+                    )
+                  })
+                }
+                </tbody>
+              </table>
+            </div>
+            <div className='col-md-2' />
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <Gojuon />,
+      document.getElementById('main')
+    )
+  </script>
+  <footer>
+    <% include ../partials/footer.ejs %>
+  </footer>
+</body>

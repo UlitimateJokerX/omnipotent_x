@@ -1,0 +1,89 @@
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body class='container'>
+  <div id='main' />
+  <script language='javascript'> var timeZone ='%2B0800'; var dstbox =''; var cpageBgColor = 'FFFFFF'; var wordAd=''; var wadurl='//'; var width='680'; var tableFontSize='12'; var cborderColor='78C9E6'; var ctdColor1='DCF0F8'; var ctdColor2='FFFFFF'; var clinkColor='248DB5'; var cdateFontColor='4EB4DC'; var cdateBgColor='FFFFFF'; var scoreFontSize='12'; var cteamFontColor='000000'; var cgoalFontColor='FF0000'; var cgoalBgColor='FFFFE1'; var cremarkFontColor='FF0000'; var mark = 'big'; var cremarkBgColor='FFFFE1'; var Skins='9'; var teamWeight='400'; var scoreWeight='700'; var goalWeight='700'; var fontWeight='700'; var voi ='4'; var away ='0'; var red ='0'; document.write("<iframe src='//freelive.7m.com.cn/live.aspx?mark="+ mark +"&TimeZone=" + timeZone + "&wordAd=" + wordAd + "&cpageBgColor="+ cpageBgColor +"&wadurl=" + wadurl + "&width=" + width + "&tableFontSize=" + tableFontSize + "&cborderColor=" + cborderColor + "&ctdColor1=" + ctdColor1 + "&ctdColor2=" + ctdColor2 + "&clinkColor=" + clinkColor + "&cdateFontColor="+ cdateFontColor +"&cdateBgColor=" + cdateBgColor + "&scoreFontSize=" + scoreFontSize + "&cteamFontColor=" + cteamFontColor + "&cgoalFontColor=" + cgoalFontColor + "&cgoalBgColor=" + cgoalBgColor + "&cremarkFontColor=" + cremarkFontColor + "&cremarkBgColor=" + cremarkBgColor + "&Skins=" + Skins + "&teamWeight=" + teamWeight + "&scoreWeight=" + scoreWeight + "&goalWeight=" + goalWeight +"&fontWeight="+ fontWeight +"&DSTbox="+ dstbox +"&voi="+ voi +"&away="+ away +"&red="+ red +"'  height='100%' width='700' scrolling='yes' border='0' frameborder='0'></iframe>")</script>
+  <script type='text/babel'>
+    class UserList extends React.Component {
+      render () {
+        const users = this.props.users
+
+        return (
+          <div className='col-md-8 table-responsive'>
+            <table className='table table-striped table-hover'>
+              <thead>
+                <tr>
+                  <th className='text-center'>帳號</th>
+                  <th className='text-center'>暱稱</th>
+                  <th className='text-center'>註冊日期</th>
+                </tr>
+              </thead>
+              <tbody>
+              {
+                users.map((user, i) => {
+                  return (
+                    <tr key={i} data-id={user.id}>
+                      <td className='text-center'>{user.username}</td>
+                      <td className='text-center'>{user.alias}</td>
+                      <td className='text-center'>{user.created_at}</td>
+                    </tr>
+                  )
+                })
+              }
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+    }
+
+    class Users extends React.Component {
+      constructor (props) {
+        super(props)
+        this.state = {
+          users: []
+        }
+
+        this.getUsers = this.getUsers.bind(this)
+      }
+
+      componentDidMount () {
+        this.getUsers()
+      }
+
+      getUsers () {
+        $.ajax({
+          url: '/api/user/all',
+          type: 'get',
+        })
+        .done(data => {
+          if (data.result == 'error') {
+            return notifyAlert('取得全部使用者錯誤! 錯誤訊息: \n' + JSON.stringify(data.msg))
+          }
+
+          const users = data.ret
+
+          this.setState({users})
+        })
+        .fail((jqXHR, textStatus, error) => {
+          return notifyAlert('取得全部使用者錯誤! 錯誤訊息: \n' + JSON.stringify(jqXHR))
+        })
+      }
+
+      render () {
+        return (
+          <UserList users={this.state.users} />
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <Users />,
+      document.getElementById('main')
+    )
+  </script>
+  <footer>
+    <% include ../partials/footer.ejs %>
+  </footer>
+</body>
