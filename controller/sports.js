@@ -10,16 +10,16 @@ function Sports (app) {
    *
    * 取得賽事預測比例API
    */
-  app.get('/api/sports/prediction', (req, res) => {
+  app.get('/api/sports/prediction', async (req, res) => {
     const sport = req.query.sport
 
-    return sportsLib.getPrediction(sport, (err, ret) => {
-      if (err) {
-        return res.json({result: 'error', msg: err.message})
-      }
+    try {
+      const ret = await sportsLib.getPrediction(sport)
 
-      return res.json({result: 'ok', ret: ret})
-    })
+      return res.json({result: 'ok', ret})
+    } catch (e) {
+      return res.json({result: 'error', msg: e.message})
+    }
   })
 
   /**
@@ -31,18 +31,13 @@ function Sports (app) {
     const sport = req.query.sport
     const matchRecommends = req.query.matches
 
-    return sportsLib.getPrediction(sport, (err, oriRet) => {
-      if (err) {
-        return res.json({result: 'error', msg: err.message})
-      }
+    try {
+      const prediction = await sportsLib.getPrediction(sport)
+      const ret = await sportsLib.getRecommend(prediction, matchRecommends)
 
-      return sportsLib.getRecommend(oriRet, matchRecommends, (err, finalRet) => {
-        if (err) {
-          return res.json({result: 'error', msg: err.message})
-        }
-
-        return res.json({result: 'ok', ret: finalRet})
-      })
-    })
+      return res.json({result: 'ok', ret})
+    } catch (e) {
+      return res.json({result: 'error', msg: e.message})
+    }
   })
 }
