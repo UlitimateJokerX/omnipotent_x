@@ -17,21 +17,13 @@
     "body-parser": "^1.19.0",
     "crypto-js": "^4.1.1",
     "cryptr": "^6.0.3",
-    "ejs": "^3.1.8",
     "entropy-string": "^4.2.0",
     "express": "^4.17.1",
-    "google-spreadsheet": "^3.3.0",
-    "japanese-kana": "^0.1.2",
     "md5": "^2.3.0",
     "minimist": "^1.2.6",
     "moment": "^2.29.4",
-    "mysql": "^2.17.1",
     "node-html-parser": "^5.3.3",
-    "react": "^16.13.1",
-    "react-datepicker": "^2.14.1",
-    "react-dom": "^16.13.1",
     "request": "^2.88.2",
-    "serve-favicon": "^2.5.0",
     "simple-encryptor": "^4.0.0"
   }
 }
