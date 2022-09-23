@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# config
+config/config.js
+config/client_secret.json
+
+test.js

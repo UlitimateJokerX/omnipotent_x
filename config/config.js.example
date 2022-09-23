@@ -1,0 +1,4 @@
+module.exports = {
+  // google sheet id
+  doc_id: ''
+}

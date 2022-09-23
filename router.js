@@ -10,6 +10,5 @@ module.exports = app => {
 
   const jpRoutes = require('./controller/jp')(app)
   const userRoutes = require('./controller/user')(app)
-  const toolsRoutes = require('./controller/tools')(app)
-  const sportAnalysisRoutes = require('./controller/sport_analysis')(app)
+  const sportsRoutes = require('./controller/sports')(app)
 }
