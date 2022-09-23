@@ -10,13 +10,13 @@ function Banks (app) {
    *
    * 取得帳戶API
    */
-  app.get('/api/banks/accounts', (req, res) => {
-    return res.json({
-      result: 'ok',
-      ret: [
-        {id: 1, name: 'fubon'},
-        {id: 2, name: 'dawho'}
-      ]
-    })
+  app.get('/api/banks/accounts', async (req, res) => {
+    try {
+      const ret = await bankLib.getAccounts()
+
+      return res.json({result: 'ok', ret})
+    } catch (e) {
+      return res.json({result: 'error', msg: e.message})
+    }
   })
 }
