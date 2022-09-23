@@ -6,15 +6,6 @@ module.exports = user
 
 function user (app) {
   /**
-   * GET /users
-   *
-   * 使用者列表頁面
-   */
-  app.get('/users', (req, res) => {
-    res.render('pages/users.ejs')
-  })
-
-  /**
    * GET /api/user/:id
    *
    * 取得單一使用者API
