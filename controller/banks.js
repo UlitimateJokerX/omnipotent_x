@@ -10,9 +10,9 @@ function Banks (app) {
    *
    * 取得帳戶API
    */
-  app.get('/api/banks/accounts', async (req, res) => {
+  app.get('/api/banks', async (req, res) => {
     try {
-      const ret = await bankLib.getAccounts()
+      const ret = await bankLib.getBanks()
 
       return res.json({result: 'ok', ret})
     } catch (e) {
