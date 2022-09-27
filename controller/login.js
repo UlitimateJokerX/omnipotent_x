@@ -12,8 +12,6 @@ function Login (app) {
     try {
       const ret = await loginLib.login(req.body)
 
-      console.log(ret)
-
       return res.json({result: 'ok', ret})
     } catch (e) {
       return res.json({result: 'error', msg: e.message})
