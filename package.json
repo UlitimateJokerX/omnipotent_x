@@ -26,6 +26,7 @@
     "moment": "^2.29.4",
     "node-html-parser": "^5.3.3",
     "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
     "simple-encryptor": "^4.0.0"
   }
 }
