@@ -1,7 +1,5 @@
 'use strict'
 
-module.exports = Sports
-
 const sportsLib = require('../lib/sports')
 
 function Sports (app) {
@@ -41,3 +39,5 @@ function Sports (app) {
     }
   })
 }
+
+module.exports = Sports

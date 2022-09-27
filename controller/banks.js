@@ -1,7 +1,5 @@
 'use strict'
 
-module.exports = Banks
-
 const bankLib = require('../lib/banks')
 
 function Banks (app) {
@@ -20,3 +18,5 @@ function Banks (app) {
     }
   })
 }
+
+module.exports = Banks
