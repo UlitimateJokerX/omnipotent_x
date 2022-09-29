@@ -1,4 +1,6 @@
 module.exports = {
   // google sheet id
-  doc_id: ''
+  doc_id: '',
+  // playsport web url
+  playsport_url: ''
 }
