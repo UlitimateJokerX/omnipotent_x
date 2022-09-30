@@ -21,6 +21,7 @@
     "entropy-string": "^4.2.0",
     "express": "^4.17.1",
     "google-spreadsheet": "^3.3.0",
+    "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "minimist": "^1.2.6",
     "moment": "^2.29.4",
