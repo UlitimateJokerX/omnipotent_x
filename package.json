@@ -16,6 +16,7 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.12",
     "crypto-js": "^4.1.1",
     "cryptr": "^6.0.3",
     "entropy-string": "^4.2.0",
