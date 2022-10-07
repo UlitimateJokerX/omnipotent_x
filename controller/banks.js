@@ -35,6 +35,23 @@ function Banks (app) {
       return res.json({result: 'error', msg: e.message})
     }
   })
+
+  /**
+   * POST /api/bank
+   *
+   * 新增一筆銀行資料API
+   */
+  app.post('/api/bank', async (req, res) => {
+    const newBank = req.body
+
+    try {
+      await bankLib.addBank(newBank)
+
+      return res.json({result: 'ok'})
+    } catch (e) {
+      return res.json({result: 'error', msg: e.message})
+    }
+  })
 }
 
 module.exports = Banks
