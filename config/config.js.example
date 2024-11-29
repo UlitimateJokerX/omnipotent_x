@@ -2,5 +2,7 @@ module.exports = {
   // google sheet id
   doc_id: '',
   // playsport web url
-  playsport_url: ''
+  playsport_url: '',
+  tg_token: '',
+  tg_chat_id: '',
 }

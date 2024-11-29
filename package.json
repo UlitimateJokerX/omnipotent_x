@@ -27,6 +27,7 @@
     "minimist": "^1.2.6",
     "moment": "^2.29.4",
     "node-html-parser": "^5.3.3",
+    "node-telegram-bot-api": "^0.66.0",
     "request": "^2.88.2",
     "request-ip": "^3.3.0",
     "request-promise-native": "^1.0.9",
