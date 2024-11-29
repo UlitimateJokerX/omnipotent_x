@@ -38,6 +38,21 @@ function Message (app) {
       return res.json({result: 'error', msg: e.message})
     }
   })
+
+  /**
+   * PUT /api/message
+   *
+   * 修改訊息API
+   */
+  app.put('/api/message', async (req, res) => {
+    try {
+      const ret = await msgLib.update(req.body.message_id, req.body.new_data)
+
+      return res.json({result: 'ok'})
+    } catch (e) {
+      return res.json({result: 'error', msg: e.message})
+    }
+  })
 }
 
 module.exports = Message
