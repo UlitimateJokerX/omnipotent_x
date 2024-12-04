@@ -1,6 +1,5 @@
 'use strict'
 
-const requestIp = require('request-ip')
 const loginLib = require('../lib/login')
 
 function Login (app) {
@@ -11,8 +10,7 @@ function Login (app) {
    */
   app.put('/api/login', async (req, res) => {
     try {
-      const clientIp = requestIp.getClientIp(req)
-      const ret = await loginLib.login(req.body, clientIp)
+      const ret = await loginLib.login(req.body)
 
       return res.json({result: 'ok', ret})
     } catch (e) {
