@@ -28,6 +28,10 @@ function Message (app) {
     try {
       const ret = await msgLib.get(req.body)
 
+      for (let i in ret) {
+        ret[i].id = Number(ret[i].id)
+      }
+
       const sortByIdDescRet = sortArray(ret, {
         by: 'id',
         order: 'desc'
