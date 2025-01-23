@@ -57,6 +57,21 @@ function Message (app) {
       return res.json({result: 'error', msg: e.message})
     }
   })
+
+  /**
+   * GET /api/announcement
+   *
+   * 取得公告API
+   */
+  app.get('/api/announcement', async (req, res) => {
+    try {
+      const ret = await msgLib.getAnnouncement()
+
+      return res.json({result: 'ok', ret: ret})
+    } catch (e) {
+      return res.json({result: 'error', msg: e.message})
+    }
+  })
 }
 
 module.exports = Message
